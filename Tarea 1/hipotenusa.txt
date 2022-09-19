@@ -1,0 +1,9 @@
+Algoritmo Hipotenusa
+	Definir a,b,c Como Real;
+	Escribir "Ingresa el valor del primer cateto";
+	Leer a;
+	Escribir "Ingresa el valor del segundo cateto";
+	Leer b;
+	c=rc((a^2)+(b^2));
+	Escribir "La hipotenusa del  triángulo rectángulo es: " ,c;
+FinAlgoritmo

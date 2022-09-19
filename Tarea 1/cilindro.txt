@@ -1,0 +1,10 @@
+Algoritmo Cilindro
+	Definir r,h,a,v Como Real;
+	Escribir "Ingresa el valor del radio";
+	Leer r;
+	Escribir "Ingresa el valor de la altura";
+	Leer h;
+	a=(2*PI*r)*(r+h);
+	v=PI*(r^2)*h;
+	Escribir "El área del cilindro es: ", a , " y el volumen es de: " ,v;
+FinAlgoritmo

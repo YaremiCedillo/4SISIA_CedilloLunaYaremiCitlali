@@ -1,0 +1,8 @@
+Algoritmo Suma1al10
+	Definir acum, i Como Entero;
+	acum=0;
+	Para i=0 Hasta 10 Con Paso 1 Hacer
+		acum=acum+i;
+	Fin Para
+	Escribir "La suma de los numeros enteros del 1 al 10 es: ", acum;
+FinAlgoritmo

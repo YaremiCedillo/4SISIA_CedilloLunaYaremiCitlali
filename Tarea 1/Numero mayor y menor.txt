@@ -1,0 +1,31 @@
+Algoritmo MayorYMenor
+	Definir A, B, C Como real;
+	Escribir "Ingresa el valor de A, B, C";
+	Leer A,B,C;
+	mientras A=B O B=C O A=C Hacer
+		Escribir "Hay números repetidos, ingresa valores diferentes";
+		Leer A,B, C;
+	FinMientras
+	Si (A>B Y A>C) Entonces
+		Escribir "El valor mayor es el primero ", A;
+	SiNo
+		si B>A y B>C Entonces
+			Escribir "El valor mayor es el segundo ", B;
+		SiNo
+			si C>A Y C>B Entonces
+				Escribir "El valor mayor es el tercero " ,C;
+			FinSi
+		FinSi
+	FinSi
+	Si (A<B Y A<C) Entonces
+		Escribir "El valor menor es el primero ", A;
+	SiNo
+		si B<A y B<C Entonces
+			Escribir "El valor menor es el segundo ", B;
+		SiNo
+			si C<A Y C<B Entonces
+				Escribir "El valor mayor es el tercero " ,C;
+			FinSi
+		FinSi
+	FinSi
+FinAlgoritmo
