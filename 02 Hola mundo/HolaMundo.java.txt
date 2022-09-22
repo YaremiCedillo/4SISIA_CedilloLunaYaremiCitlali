@@ -1,0 +1,17 @@
+//Esto es un comentario
+/*
+*Este cometario sirve para poder tener varias lineas cometarias en el codigo
+* Todo progrma en java, maneja clases, una clase es un objeto del mundo real
+*/ (alt+z) 
+
+class holamundo{
+//cuerpo del programa
+/*
+*aqui es donde nosotros codificamos todos los elemntos del programa, funciones, estructuras, variables y metpdps 
+*toda clase debe tener un metodo principal
+*/
+Run|Debung
+public static void main )string[] args) {
+System.out.println(x:"Hola Mundo");
+}
+
