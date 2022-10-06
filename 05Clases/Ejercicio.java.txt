@@ -1,0 +1,301 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Ejercicios {
+
+    /** Vamos a hacer una calculadora, un conversor de unidades creacion de cuadros y de movimiento */
+    
+    //los metodos son las operaciones de un objeto o de una clase, tambien llamado comportamiento
+
+    //objetos
+    Scanner entrada = new Scanner(System.in);
+
+    //variables globales
+    char op,letra;
+   boolean comprobacion = false;
+
+    //vamos a ser un metodo para el menu del programa
+    public void menu(){
+        //menu del programa
+      do{
+        System.out.println("Ejercicios de yo para tu");
+        System.out.println("a.- Calculadora");
+        System.out.println("b.- Conversion de unidades");
+        System.out.println("c.- Crear cuadros magicos");
+        System.out.println("d.- Desplazamiento de cuadro");
+        System.out.println("Elija una opción");
+
+        op = entrada.next().charAt(0);
+
+        switch(op){
+            case 'a' :
+                 //implementamos metodos
+                Ejercicio1();
+                break;
+            case 'b' :
+                //implementamos metodos
+               Ejercicio2();
+               break;
+            case 'c' :
+               //implementamos metodos
+              Ejercicio3();
+              break;
+            case 'd' :
+              //implementamos metodos
+             Ejercicio4();
+             break;
+            default: 
+                System.out.println("Gracias por jugar :3");
+        }
+        System.out.println("Deseas reptir el programa, escribe s para si");
+                              letra = entrada.next().charAt(0);
+                    }while(letra == 's' || letra == 'S' );
+    }
+
+    public void Ejercicio1(){
+        //variable local
+        double num1 = 0.00, suma = 0.00, multi=1.00, numerador,denominador, resultado;
+        char operacion;
+
+        System.out.println("Selecciona la operacion que desees realizar");
+        System.out.println("a.- Suma y Resta");
+        System.out.println("b.- Multiplicacion");
+        System.out.println("c.- Division");
+        operacion = entrada.next().charAt(0);
+      
+        switch(operacion){
+            case 'a':
+             do {
+              
+      comprobacion = false;
+      try {
+         
+           System.out.println("\n-- Suma o resta --");
+            do{
+                System.out.println("Para detener la suma o resta ingrese el numero 0");
+                System.out.println("Escriba los numeros que desee sumar o restar");
+                num1 = entrada.nextDouble();
+                suma += num1;
+                //suma = suma + num1;
+            }while(num1 != 0);
+           System.out.println("El resultado es: " + suma);
+        } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }  
+    } while (comprobacion);
+
+                break;
+            case 'b':
+            do{
+              comprobacion = false;
+            try {
+                System.out.println("\n-- Multiplicación --");
+            do{
+                 System.out.println("Para detener multiplicaion ingrese el numero 0");
+                System.out.println("Escriba los numeros que desee sumar o restar");
+                num1 = entrada.nextDouble();
+                multi *= num1;
+                // multi = multi * num1;
+
+            } while (num1 != 0);
+            System.out.println("El resultado es: " + multi);
+      
+              } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }
+    } while (comprobacion);
+                break;
+            case 'c':
+            do{
+              comprobacion = false;
+              try{
+                do{
+                System.out.println("\n-- División --");
+                System.out.println("Digite el numerador");
+                numerador =entrada.nextDouble();
+                System.out.println("Digite el denominador");
+                denominador =entrada.nextDouble();
+                resultado=numerador / denominador;
+                if (denominador != 0){
+                  System.out.println("El resultado de la division es: "+resultado);
+                }else{
+                  System.out.println("No se puede dividir por 0");
+                }
+                 System.out.println("Deseas hacer otra division, escribe s para si");
+                              letra = entrada.next().charAt(0);
+                    }while(letra == 's' || letra == 'S' );
+              } catch(Exception e){
+                System.out.println("No se puede dividir entre 0, ni tampoco ingresar letras");
+                comprobacion = true;
+              }
+            }while (comprobacion != false);
+                break;
+            
+      default:
+                System.out.println("Opcion no valida. ayos w_w");
+                break;
+            
+        }
+
+    }
+
+   public void Ejercicio2(){
+       /* 
+        vamos a crear un programa que se encargue de convertir 
+        kg a libras y gramos
+        m/s a km/s
+        tarea
+        m a yardas y millas*/
+        
+        double metros = 0.00, kg = 0.00, velocidad = 0.00, cm = 100.00, pulgada = 39.37, gramos = 1000.00, libra = 2.20, ms = 0.00;
+        double a, b, m=0.00, yarda=1.09361, millas=0.000621371;
+        System.out.println("Seleccione la cantidad que desea convertir de acuerdo a las siguientes unidades : ");
+        System.out.println("a. Metros a cm y pulgadas");
+        System.out.println("b. Kilogramos a libras y gramos");
+        System.out.println("c. m/s a km/h");
+        System.out.println("d. Metros a yardas y millas");
+        op = entrada.next().charAt(0);
+
+        switch(op){
+             
+            case 'a': 
+            do {
+      comprobacion = false;
+      try {
+        do{
+        System.out.println("\n-- Metros a cm y pulgadas --");
+                System.out.println("Ingrese los metros a transformar: ");
+                metros = entrada.nextDouble();
+                a = metros * cm;
+                b = metros * pulgada;
+                System.out.println("La cantidad en metros es: " + metros + " de m a cm son : " + a + " de m a pulgadas son : " +b  );
+                System.out.println("Deseas hacer otra conversión de metros, escribe s para si");
+                              letra = entrada.next().charAt(0);
+                    }while(letra == 's' || letra == 'S' );
+                   } catch (InputMismatchException e) {
+                    System.out.println("Ingrese unicamente valores numericos");
+                    comprobacion = true;
+                    entrada.nextLine();
+                  }
+                } while (comprobacion);
+                break;
+            
+            case 'b':
+             do {
+      comprobacion = false;
+      try {
+        do{
+        System.out.println("\n--  Kilogramos a libras y gramos --");
+            System.out.println("Ingrese los kilogramos a transformar: ");
+            kg = entrada.nextDouble();
+            a = kg * gramos;
+            b = kg * libra;
+            System.out.println("La cantidad en kg es: " + kg + " de kg a gramos son : " + a + " de kg a libras son : " +b  );
+            System.out.println("Deseas hacer otra conversión de kilogramos, escribe s para si");
+                  letra = entrada.next().charAt(0);
+        }while(letra == 's' || letra == 'S' );
+       } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }
+    } while (comprobacion); 
+                break;
+            
+            case 'c':
+             do {
+      comprobacion = false;
+      try {
+        do{
+        System.out.println("\n-- De m/s a km/h --");
+            System.out.println("Ingrese la velocidad en m/s: ");
+                ms = entrada.nextDouble();
+                a = ms*(3600/1000);    
+                System.out.println("La conversion de m/s a km/h es de: " + a );
+          System.out.println("Deseas hacer otra conversión de m/s, escribe s para si");
+                  letra = entrada.next().charAt(0);
+        }while(letra == 's' || letra == 'S' );
+       } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }
+    } while (comprobacion);
+                break;
+            
+            case 'd':
+             do {
+      comprobacion = false;
+      try {
+        do{
+        System.out.println("\n-- Metros a yardas y millas --");
+             System.out.println("Ingrese las metros a convertir: ");
+            m = entrada.nextDouble();
+            a= m *yarda;
+            b=m*millas;
+            System.out.println("la cantidad de metros es: "+m+" en yardas es: "+a+" en millas es: "+b);
+        System.out.println("Deseas hacer otra conversión de metros, escribe s para si");
+                  letra = entrada.next().charAt(0);
+        }while(letra == 's' || letra == 'S' );
+       } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }
+    } while (comprobacion); 
+            break;
+            default:
+                System.out.println("Opcion no valida");
+                break;
+        }
+    }
+
+
+    public void Ejercicio3(){
+       int lado;
+        do {
+      comprobacion = false;
+      try {
+        System.out.println("\n-- Figurita */ --");
+        do{
+            System.out.println("Digita el tamaño del cuadrado : "); 
+            lado = entrada.nextInt(); 
+            if(lado>=1 & lado<=1000){
+            for (int i=1; i<= lado; i++){
+                for(int j=1; j<=lado;j++){
+                    System.out.print(" *"); 
+                }
+                System.out.println(""); 
+                for(int k=1; k<=lado;k++){
+                System.out.print(" /"); 
+                }
+                System.out.println(""); 
+            }
+            
+        }else{
+            System.out.println("Fuera del rango");
+        }
+              System.out.println("Deseas repetir figuritas, escribe s para si");
+                  letra = entrada.next().charAt(0);
+        }while(letra == 's' || letra == 'S' );
+       } catch (InputMismatchException e) {
+        System.out.println("Ingrese unicamente valores numericos");
+        comprobacion = true;
+        entrada.nextLine();
+      }
+    } while (comprobacion); 
+
+    }
+      
+        
+  
+
+    public void Ejercicio4(){
+        System.out.println("Lo iba a hacer el profe");
+    }
+
+}
