@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Animal {
+  
+    private String nombre, raza, tipo_alimento;
+    private int edad;
+    Scanner entrada = new Scanner(System.in);
+
+    public Animal(){
+    
+    }
+
+    public Animal(String nombre, String raza, String tipo_alimento, int edad){
+        this.nombre = nombre;
+        this.raza = raza;
+        this.tipo_alimento = tipo_alimento;
+        this.edad = edad;
+
+    }
+
+    //recibir
+    public String getNombre(){
+      System.out.println("\nIngrese su nombre:");
+      nombre = entrada.nextLine();
+        return nombre;
+    }
+
+    //enviar
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    //recibir
+    public String getRaza(){
+      System.out.println("Ingrese su raza:");
+      raza = entrada.nextLine();
+        return raza;
+    }
+
+    //enviar
+    public void setRaza(String raza){
+        this.raza = raza;
+    }
+
+    //recibir
+    public String getTipo_alimento(){
+      System.out.println("Ingrese su tipo de alimento:");
+      tipo_alimento = entrada.nextLine();
+        return tipo_alimento;
+    }
+
+    //enviar
+    public void setTipo_alimento(String tipo_alimento){
+        this.tipo_alimento = tipo_alimento;
+    }
+
+    //recibir
+    public int getEdad(){
+      System.out.println("Ingrese su edad:");
+      edad = entrada.nextInt();
+        return edad;
+    }
+
+    //enviar
+    public void setEdad(int edad){
+        this.edad = edad;
+    }   
+}
